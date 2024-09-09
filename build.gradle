@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.agcsvalsoft'
-version = '0.0.1'
+version = '1.0.0'
 
 java {
     toolchain {
@@ -24,8 +24,18 @@ dependencies {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        gpr(MavenPublication) {
             from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/GabrielCruzSoto/nplus-common-errors")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.token") ?: System.getenv("TOKEN")
+            }
         }
     }
 }
