@@ -1,4 +1,4 @@
-package com.agcsvalsoft.nplus.npluscommonerrors.enums;
+package com.agcsvalsoft.nplus.npluscommon.enums;
 
 
 

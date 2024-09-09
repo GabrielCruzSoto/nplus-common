@@ -1,4 +1,4 @@
-package com.agcsvalsoft.nplus.npluscommonerrors.exceptions;
+package com.agcsvalsoft.nplus.npluscommon.exceptions;
 
 import org.springframework.http.HttpStatus;
 
