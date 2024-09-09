@@ -1,8 +1,8 @@
-package com.agcsvalsoft.nplus.npluscommonerrors.exceptions;
+package com.agcsvalsoft.nplus.npluscommon.exceptions;
 
 import org.springframework.http.HttpStatus;
 
-import com.agcsvalsoft.nplus.npluscommonerrors.enums.ErrorsEnum;
+import com.agcsvalsoft.nplus.npluscommon.enums.ErrorsEnum;
 
 public class NotFoundException extends NPlusException {
 
