@@ -4,12 +4,17 @@
 # documentation.
 # This workflow will build a package using Gradle and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-gradle
-
 name: Gradle Package
 
 on:
   push:
-    branches: ["master"]
+    branches:
+      - master
+    tags:
+      - '*' # Esto se asegura de que el flujo se ejecute cuando se cree un tag
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
@@ -27,8 +32,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        server-id: github # Must match the server-id in the pom.xml or build.gradle
-        settings-path: ${{ github.workspace }} # Path to settings.xml
+        server-id: github
+        settings-path: ${{ github.workspace }}
 
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
@@ -41,4 +46,3 @@ jobs:
       env:
         USERNAME: ${{ github.actor }}
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
