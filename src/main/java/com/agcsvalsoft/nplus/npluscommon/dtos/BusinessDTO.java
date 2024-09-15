@@ -1,8 +1,10 @@
 package com.agcsvalsoft.nplus.npluscommon.dtos;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.sql.Date;
 
+import com.agcsvalsoft.nplus.npluscommon.enums.StatusEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +12,7 @@ import lombok.Setter;
 @Setter
 public class BusinessDTO implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	private String id;
@@ -22,6 +25,7 @@ public class BusinessDTO implements Serializable {
 	private String phone;
 	private String cellPhone;
 	private LegalRepresentativeDTO legalRepresentative;
+	private StatusEnum status;
 	private Date createdOn;
 	private Date lastModification;
 

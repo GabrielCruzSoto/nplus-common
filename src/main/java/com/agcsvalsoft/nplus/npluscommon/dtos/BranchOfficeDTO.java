@@ -1,4 +1,5 @@
 package com.agcsvalsoft.nplus.npluscommon.dtos;
+import java.io.Serial;
 import java.util.Date;
 
 import lombok.Getter;
@@ -10,6 +11,7 @@ import java.io.Serializable;
 @Setter
 public class BranchOfficeDTO  implements Serializable {
 
+	@Serial
     private static final long serialVersionUID = 1L;
     
     private String id;
