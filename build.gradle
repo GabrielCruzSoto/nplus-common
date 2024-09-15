@@ -2,9 +2,12 @@ plugins {
     id 'java'
     id 'maven-publish'
 }
-
+def getVersionFromTag() {
+    def tag = 'git describe --tags --abbrev=0'.execute().text.trim()
+    return tag ?: '1.0.0'
+}
 group = 'com.agcsvalsoft'
-version = '1.0.0'
+version = getVersionFromTag()
 
 java {
     toolchain {
